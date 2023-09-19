@@ -1,13 +1,34 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  //iterate through each number of the array
+for (let i = 0; i < array.length; i++) {
+  //for the current num, indentify a complement that adds to the target number (comp = target - num)
+const complement = target - array[i] 
+//iterate through the rest fo the array 
+for ( let j = i + 1; j < array.length; j++) {
+  //check if any number is our compliemnt
+  //if so, return true
+  if (array[j] === complement) return true
+}
+}
+// if i reach the end of the array, return false
+return false;
 }
 
 /* 
-  Write the Big O time complexity of your function here
+ make a function that checks if two numbers are the array
+ add up to some taget
+ and the target us `6` i should return true because 2 and 4 add to 6
+ for each number check if there is anotehr number that adds to the target
 */
 
 /* 
-  Add your pseudocode here
+ iterate througheach number of the array
+  forthe current num, indentify a complement that adds to the target number (comp = target - num)
+  iterate through the rest fo the array 
+  check if any number is our compliemnt
+  if so, return true
+
+if i reach the end of the array, return false
 */
 
 /*
@@ -29,6 +50,9 @@ if (require.main === module) {
 
   console.log("Expecting: false");
   console.log("=>", hasTargetSum([1, 2, 5], 4));
+
+  console.log("Expecting: false");
+  console.log("=>", hasTargetSum ([3, 6, 67], 5))
 }
 
 module.exports = hasTargetSum;
